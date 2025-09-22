@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+nav{
+        display: block;
+        padding-left: 16px;
+        ul {
+            list-style-type: none;
+            li {
+                .location{
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    font-family: v.$title-font;
+                    font-weight: 800;
+                    font-size: 20px;
+                    line-height: 100%;
+                    letter-spacing: 3.64px;
+                    color: white;
+                    .text{
+                        background-color: v.$black;
+                        padding: 15px 30px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .flecha{
+                        background-color: v.$orange;
+                        padding: 12px 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            width: 10px;
+                            height: auto;
+                            display: block;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+@include m.breakpoint(desktop){
+    nav:hover{
+        ul{
+            li{
+                .location{
+                    .text{
+                        background-color: v.$orange;
+                    }
+                    .flecha{
+                        background-color: v.$black;
+                    }
+                }
+            }
+        }
+    }
+}

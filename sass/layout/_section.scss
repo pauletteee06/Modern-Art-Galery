@@ -1,0 +1,234 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+section.sala{
+    padding-left: 16px;
+    img.sala_mobile{
+        margin-bottom: 20px;
+    }
+    img.sala_tablet{
+        display: none;
+    }
+    img.sala_desktop{
+        display: none;
+    }
+    h1{
+        font-family: v.$title-font;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 55px;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    p{
+        font-family: v.$text-font;
+        color: v.$grey;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0px;
+        padding-right: 16px;
+        margin-bottom: 40px;
+    }
+
+    @include m.breakpoint(tablet){
+        padding: 0px 40px;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas: 
+            "texto imagen";
+        gap: 15px;
+        img.sala_mobile{
+            display: none;
+        }
+        img.sala_tablet{
+            display: block;
+            grid-area: imagen;
+        }
+        img.sala_desktop{
+            display: none;
+        }
+        div{
+            grid-area: texto;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p{
+                margin-bottom: 0px;
+            }
+        }
+        margin-bottom: 20px;
+    }
+
+    @include m.breakpoint(desktop){
+        padding: 0px 200px;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        img.sala_mobile{
+            display: none;
+        }
+        img.sala_tablet{
+            display: none;
+        }
+        img.sala_desktop{
+            display: block;
+            grid-area: imagen;
+            width: 700px;
+            height: auto;
+        }
+        div{
+            grid-area: texto;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h1{
+                font-weight: 900;
+                font-style: Black;
+                font-size: 60px;
+                line-height: 60px;
+                letter-spacing: 0px;
+                text-transform: uppercase;
+            }
+            p{
+                font-weight: 400;
+                font-style: Light;
+                font-size: 22px;
+                line-height: 32px;
+                letter-spacing: 0px;
+            }
+        }
+    }
+}
+
+section.grid{
+    padding-left: 16px;
+    margin-bottom: 100px;
+    img.mesa_mobile{
+        margin-bottom: 20px;
+    }
+    img.mesa_tablet{
+        display: none;
+    }
+    img.mesa_desktop{
+        display: none;
+    }
+    img.grid2_mobile{
+        margin-bottom: 20px;
+    }
+    img.grid2_tablet{
+        display: none;
+    }
+    img.grid2_desktop{
+        display: none;
+    }
+    div{
+        background-color: v.$black;
+        width: 343px;
+        padding: 30px 25px;
+        h1{
+            font-family: v.$title-font;
+            color: white;
+            font-weight: 900;
+            font-size: 50px;
+            line-height: 45px;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        p{
+            font-family: v.$text-font;
+            color: white;
+            font-family: Outfit;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0px;
+        }
+    }
+
+    @include m.breakpoint(tablet){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 45% auto;
+        gap: 10px;
+        padding-left: 40px;
+        img.mesa_mobile{
+            display: none;
+        }
+        img.mesa_tablet{
+            display: block;
+            grid-row: 1 / span 2;
+        }
+        img.mesa_desktop{
+            display: none;
+        }
+        img.grid2_mobile{
+            display: none;
+        }
+        img.grid2_tablet{
+            display: block;
+        }
+        img.grid2_desktop{
+            display: none;
+        }
+        div{
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h1{
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    @include m.breakpoint(desktop){
+        padding: 0px 200px;
+        gap: 30px;
+        img.mesa_mobile{
+            display: none;
+        }
+        img.mesa_tablet{
+            display: none;
+        }
+        img.mesa_desktop{
+            display: block;
+            grid-row: 1 / span 2;
+            width: 720px;
+            height: auto;
+        }
+        img.grid2_mobile{
+            display: none;
+        }
+        img.grid2_tablet{
+            display: none;
+        }
+        img.grid2_desktop{
+            display: block;
+            width: 520px;
+            height: auto;
+        }
+        div{
+            width: 520px;
+            height: auto;
+            h1{
+                font-weight: 900;
+                font-style: Black;
+                font-size: 60px;
+                line-height: 60px;
+                letter-spacing: 0px;
+                text-transform: uppercase;
+            }
+            p{
+                font-weight: 400;
+                font-style: Light;
+                font-size: 22px;
+                line-height: 32px;
+                letter-spacing: 0px;
+            }
+        }
+    }
+}
